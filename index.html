@@ -2,7 +2,7 @@
 ================================================================================
   IME – IMERSÃO MÉTODO EVO | Sorriso-MT
   Baseado no modelo v1.0
-  IME Sorriso-MT | Versão 1.8 | Fase: Lançamento/Captura
+  IME Sorriso-MT | Versão 2.1 | Fase: Vendas/Carrinho
 ================================================================================
 -->
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sorriso.metodoevoimpacto.com.br">
 <meta property="og:title" content="Imersão Método EVO – Sorriso-MT | 04 a 06 de Setembro de 2026">
-<meta property="og:description" content="3 dias que redefinem sua vida emocional, profissional e familiar para sempre. Garanta sua vaga na Imersão Método EVO em Sorriso-MT.">
+<meta property="og:description" content="3 dias que redefinem sua vida emocional, profissional e familiar para sempre. Entre no grupo VIP da Imersão Método EVO em Sorriso-MT.">
 <meta property="og:image" content="https://sorriso.metodoevoimpacto.com.br/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -47,8 +47,9 @@
   }
   @font-face { font-family: 'Montserrat'; font-display: optional; }
   @font-face { font-family: 'Open Sans'; font-display: optional; }
-  html { scroll-behavior: smooth; overflow-x: hidden; }
-  body { background: var(--black); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; max-width: 100vw; }
+  html, body { overflow-x: hidden; max-width: 100vw; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
 
   /* NAV */
   .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,212,255,0.15); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
@@ -58,14 +59,14 @@
   .nav-cta:hover { background: var(--cyan-dark); color: var(--black); transform: translateY(-2px); }
 
   /* HERO */
-  .hero { min-height: 100vh; padding-top: 64px; position: relative; display: flex; align-items: center; overflow: hidden; background: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%), url('https://ime.marciomicheli.com.br/wp-content/uploads/2026/03/MENTORIA-BLINDAGEM-EMOCIONAL-LP-FOTO-DOBRA1-1.png') center/cover no-repeat; }
+  .hero { min-height: 100vh; padding-top: 64px; position: relative; display: flex; align-items: flex-start; overflow: hidden; background: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%), url('https://ime.marciomicheli.com.br/wp-content/uploads/2026/03/MENTORIA-BLINDAGEM-EMOCIONAL-LP-FOTO-DOBRA1-1.png') center/cover no-repeat; }
   .hero-bg { display: none; }
   .hero-photo { display: none; }
-  .hero-content { position: relative; z-index: 2; max-width: 700px; padding: 80px 48px; margin-left: max(8vw, 48px); }
-  .hero-eyebrow { display: inline-block; font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 18px; border: 1px solid rgba(0,212,255,0.35); padding: 5px 14px; border-radius: 2px; }
-  .hero h1 { font-family: var(--font-display); font-size: clamp(30px, 4.2vw, 56px); font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; margin-bottom: 20px; }
+  .hero-content { position: relative; z-index: 2; max-width: 700px; padding: 24px 48px 40px; margin-left: max(8vw, 48px); }
+  .hero-eyebrow { display: inline-block; font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; border: 1px solid rgba(0,212,255,0.35); padding: 5px 14px; border-radius: 2px; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(30px, 4.2vw, 56px); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 12px; }
   .hero-sub { font-size: 16px; color: var(--grey-light); margin-bottom: 32px; max-width: 480px; }
-  .hero-meta { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
+  .hero-meta { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
   .hero-meta-item { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--grey-light); }
   .hero-meta-item .icon { color: var(--cyan); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
   .hero-meta-item strong { color: var(--white); }
@@ -177,7 +178,7 @@
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    .hero { background-position: center right; }
+    .hero { background-position: center right; min-height: auto; padding-bottom: 60px; }
     .hero-content { padding: 60px 32px; margin-left: 0; max-width: 100%; }
     .benefits-grid { grid-template-columns: repeat(2, 1fr); }
     .foryou-inner { grid-template-columns: 1fr; gap: 32px; }
@@ -185,12 +186,12 @@
     .foryou-photos { display: none; }
     .schedule-grid { grid-template-columns: 1fr; gap: 16px; }
     .speaker-inner { grid-template-columns: 1fr; gap: 40px; }
-    .speaker-photo-wrap { max-width: 260px; margin: 0 auto; }
+    .speaker-photo-wrap { max-width: 100%; margin: 0 auto; width: 100%; min-height: 360px; }
   }
   @media (max-width: 600px) {
     .nav { padding: 12px 16px; }
     .nav-logo img { height: 28px; }
-    .nav-cta { font-size: 12px; padding: 8px 14px; }
+    .nav-cta { font-size: 11px; padding: 6px 10px; }
     .hero { min-height: auto; padding-top: 56px; }
     .hero-content { padding: 48px 20px 56px; margin-left: 0; max-width: 100%; width: 100%; }
     .hero h1 { font-size: 28px; line-height: 1.2; }
@@ -209,7 +210,7 @@
     .schedule-day-header { padding: 14px 18px; }
     .schedule-day ul { padding: 16px 18px; }
     .speaker-inner { text-align: center; }
-    .speaker-photo-wrap { max-width: 200px; margin: 0 auto; }
+    .speaker-photo-wrap { max-width: 100%; margin: 0 auto; width: 100%; min-height: 340px; }
     .speaker-content { text-align: left; }
     .speaker-content .btn-vip-wrapper { margin: 0 auto; }
     .speaker-content h2 { font-size: 22px; }
@@ -221,6 +222,73 @@
     .btn-primary { font-size: 13px; padding: 13px 18px; }
     .nav-cta { display: none; }
   }
+  /* ── TICKER NAV ── */
+  .nav-ticker { flex: 1; overflow: hidden; margin: 0 20px; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); }
+  .nav-ticker-inner { display: flex; width: max-content; animation: ticker 16s linear infinite; }
+  .nav-ticker-copy { white-space: nowrap; font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; background: linear-gradient(90deg, #FF6B00, #8B2FC9, #00D4FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; padding-right: 40px; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @media (max-width: 900px) { .nav-ticker { margin: 0 10px; } .nav-ticker-inner { animation-duration: 20s; } }
+  @media (max-width: 600px) { .nav-ticker { margin: 0 10px; } .nav-ticker-copy { font-size: 10px; } .nav-ticker-inner { animation-duration: 24s; } }
+
+  /* ── HERO BTN DESKTOP ── */
+  .hero-btn-desktop { display: none; margin-top: 24px; }
+  @media (max-width: 900px) { .hero-btn-desktop { display: inline-flex !important; } }
+
+  /* ── CARROSSEL MARCIO ── */
+  .speaker-carousel { position: relative; width: 100%; border-radius: 8px; overflow: hidden; height: 400px; background: var(--dark2); }
+  .speaker-carousel img { position: absolute; top: -25%; left: -5%; width: 110%; height: 135%; object-fit: cover; object-position: center top; border-radius: 8px; opacity: 0; transition: opacity 0.8s ease; }
+  .speaker-carousel img.active { opacity: 1; }
+  .carousel-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 2; }
+  .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.3s; cursor: pointer; }
+  .carousel-dot.active { background: #FF6B00; }
+  @media (max-width: 900px) { .speaker-carousel { height: 500px; } }
+  @media (max-width: 600px) { .speaker-carousel { height: 550px; } .speaker-photo-wrap { max-width: 100% !important; } }
+
+  /* ── CARDS DE INGRESSO COM BORDA DEGRADÊ ANIMADA ── */
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes rotateBorder {
+    to { --angle: 360deg; }
+  }
+
+  /* ── GRID 3 INGRESSOS ── */
+  .tickets-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 40px auto 32px; align-items: stretch; }
+  .ticket-wrap { height: 100%; display: flex; flex-direction: column; border-radius: 14px; padding: 2px; background: linear-gradient(135deg, #FF6B00, #8B2FC9, #00D4FF, #8B2FC9, #FF6B00); transition: box-shadow 0.3s, transform 0.3s; position: relative; overflow: visible; isolation: isolate; }
+  .ticket-wrap:hover { transform: translateY(-4px); box-shadow: 0 0 40px rgba(255,107,0,0.3); }
+  .ticket-wrap--destaque { padding: 2px; background: conic-gradient(from var(--angle), #FF6B00, #8B2FC9, #00D4FF, #8B2FC9, #FF6B00); animation: rotateBorder 3s linear infinite; box-shadow: 0 0 30px rgba(255,107,0,0.2); }
+  .ticket-wrap--destaque:hover { box-shadow: 0 0 60px rgba(255,107,0,0.4); }
+  .ticket-card { flex: 1; display: flex; flex-direction: column; background: var(--dark2); border-radius: 12px; overflow: hidden; position: relative; }
+  .ticket-card > * { position: relative; z-index: 1; }
+  .ticket-body { flex: 1; }
+  .ticket-badge { position: absolute; top: -2px; right: -2px; width: 110px; height: 110px; overflow: hidden; z-index: 20; pointer-events: none; border-radius: 0 12px 0 0; }
+  .ticket-badge span { position: absolute; display: block; width: 150px; background: #FF6B00; color: #fff; font-family: var(--font-display); font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; padding: 7px 0; top: 28px; right: -30px; transform: rotate(45deg); transform-origin: center center; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+  .btn-ticket { display: block; box-sizing: border-box; width: 100%; background: var(--green); color: var(--black); font-family: var(--font-display); font-weight: 600; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px; border-radius: 4px; text-decoration: none; text-align: center; transition: background 0.2s, color 0.2s, transform 0.15s; margin-top: auto; }
+  .btn-ticket:hover { background: var(--green-dark); color: var(--white); transform: translateY(-2px); }
+  .ticket-header { background: linear-gradient(135deg, #FF6B00, #8B2FC9, #00D4FF); color: var(--white); padding: 20px 32px; }
+  .ticket-header h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; letter-spacing: 0.02em; }
+  .ticket-body { padding: 32px; }
+  .ticket-desc { font-size: 14px; color: var(--grey-light); margin-bottom: 16px; text-align: center; min-height: 48px; display: flex; align-items: center; justify-content: center; }
+  .ticket-price-old { font-size: 13px; color: var(--grey); text-decoration: line-through; text-align: center; margin-bottom: 4px; min-height: 40px; display: flex; align-items: center; justify-content: center; }
+  .ticket-price { font-family: var(--font-display); font-size: 60px; font-weight: 600; color: var(--white); text-align: center; line-height: 1; margin-bottom: 6px; }
+  .ticket-price span { font-size: 28px; vertical-align: top; padding-top: 10px; display: inline-block; margin-right: 4px; }
+  .ticket-installments { font-size: 12px; color: var(--grey); text-align: center; margin-bottom: 28px; }
+  .ticket-features { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .ticket-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--grey-light); }
+  .ticket-features li::before { content: "✓"; color: var(--cyan); font-weight: 600; flex-shrink: 0; }
+  .ticket-footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; }
+  .ticket-footer .label { font-family: var(--font-display); font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--cyan); letter-spacing: 0.05em; }
+  .ticket-footer .total { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--cyan); }
+  .ticket-vagas { font-size: 12px; text-align: center; color: var(--grey); margin-top: 10px; padding-bottom: 16px; }
+  .ticket-notice { font-size: 12px; color: var(--grey); text-align: center; margin-top: 24px; }
+  .section-ticket { background: var(--dark); padding: 80px 24px; text-align: center; }
+  .section-ticket h2 { font-family: var(--font-display); font-size: clamp(22px, 3vw, 36px); font-weight: 600; line-height: 1.3; margin-bottom: 8px; }
+  .section-ticket .sub { font-size: 14px; color: var(--grey); margin-bottom: 52px; }
+  @media (max-width: 900px) { .tickets-grid { grid-template-columns: 1fr; max-width: 420px; margin: 40px auto 32px; } .ticket-wrap { width: 100%; } }
+  @media (max-width: 600px) { .section-ticket { padding: 56px 20px; } .ticket-body { padding: 24px 20px; } .ticket-footer { padding: 14px 20px; } .ticket-price { font-size: 52px; } .btn-ticket { font-size: 14px; padding: 14px; } }
+
 </style>
 
 <!-- Meta Pixel -->
@@ -248,6 +316,58 @@ fbq('track', 'PageView');
     })(window, document, "clarity", "script", "xvklwkyafc");
 </script>
 <!-- Fim Microsoft Clarity -->
+<script>
+  // ── CARROSSEL MARCIO ──
+  document.addEventListener('DOMContentLoaded', function() {
+    const imgs = document.querySelectorAll('#speakerCarousel img');
+    const dots = document.querySelectorAll('#speakerCarousel .carousel-dot');
+    if (!imgs.length) return;
+    let current = 0;
+    function goToSlide(n) {
+      imgs[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = n;
+      imgs[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+    window.goToSlide = goToSlide;
+    setInterval(() => { goToSlide((current + 1) % imgs.length); }, 5000);
+  });
+
+  // ── BOTÃO HERO DESKTOP ──
+  (function() {
+    function posicionarBotaoHero() {
+      const btn = document.getElementById('hero-btn');
+      const meta = document.getElementById('hero-meta');
+      const hero = document.querySelector('.hero');
+      if (!btn || !meta || !hero) return;
+      const old = document.getElementById('hero-btn-clone');
+      if (old) old.remove();
+      if (window.innerWidth > 900) {
+        btn.style.display = 'none';
+        const clone = btn.cloneNode(true);
+        clone.id = 'hero-btn-clone';
+        clone.removeAttribute('style');
+        const heroRect = hero.getBoundingClientRect();
+        const metaRect = meta.getBoundingClientRect();
+        const scrollY = window.scrollY || window.pageYOffset;
+        clone.style.position = 'absolute';
+        clone.style.top = (metaRect.top - heroRect.top + scrollY) + 'px';
+        clone.style.right = '8%';
+        clone.style.zIndex = '3';
+        clone.style.display = 'inline-flex';
+        hero.style.position = 'relative';
+        hero.appendChild(clone);
+      } else {
+        btn.style.display = 'inline-flex';
+        const old2 = document.getElementById('hero-btn-clone');
+        if (old2) old2.remove();
+      }
+    }
+    window.addEventListener('load', posicionarBotaoHero);
+    window.addEventListener('resize', posicionarBotaoHero);
+  })();
+</script>
 </head>
 <body>
 
@@ -255,6 +375,20 @@ fbq('track', 'PageView');
 <nav class="nav">
   <div class="nav-logo">
     <img src="https://ime.marciomicheli.com.br/wp-content/uploads/2024/06/ime-logo-branca-colorida.png" alt="IME Logo">
+  </div>
+  <div class="nav-ticker">
+    <div class="nav-ticker-inner">
+      <div class="nav-ticker-copy">
+        Sorriso-MT &nbsp;·&nbsp; 04, 05 e 06 de Setembro &nbsp;·&nbsp; Vagas Limitadas &nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Sorriso-MT &nbsp;·&nbsp; 04, 05 e 06 de Setembro &nbsp;·&nbsp; Vagas Limitadas &nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Sorriso-MT &nbsp;·&nbsp; 04, 05 e 06 de Setembro &nbsp;·&nbsp; Vagas Limitadas &nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="nav-ticker-copy">
+        Sorriso-MT &nbsp;·&nbsp; 04, 05 e 06 de Setembro &nbsp;·&nbsp; Vagas Limitadas &nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Sorriso-MT &nbsp;·&nbsp; 04, 05 e 06 de Setembro &nbsp;·&nbsp; Vagas Limitadas &nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Sorriso-MT &nbsp;·&nbsp; 04, 05 e 06 de Setembro &nbsp;·&nbsp; Vagas Limitadas &nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
   </div>
   <a href="https://api.whatsapp.com/send/?phone=5533984123839&text=Quero+saber+mais+informa%C3%A7%C3%B5es+da+Imers%C3%A3o+em+Sorriso-MT&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="nav-cta">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><defs><linearGradient id="gwp" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><path fill="url(#gwp)" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Quero saber mais
@@ -271,7 +405,7 @@ fbq('track', 'PageView');
     <span class="hero-eyebrow">Imersão Método EVO · Sorriso-MT</span>
     <h1>3 dias que redefinem sua vida <span class="evo-gradient">emocional,</span> profissional e familiar para sempre.</h1>
     <p class="hero-sub">O Imersão Método EVO é onde tudo acontece. É o seu <strong>recomeço.</strong></p>
-    <div class="hero-meta">
+    <div class="hero-meta" id="hero-meta">
       <div class="hero-meta-item">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px"><defs><linearGradient id="gi1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" stroke="url(#gi1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <div><span style="font-weight:300;">Transmitido presencialmente</span> — <strong style="color:#ffffff;">SORRISO-MT</strong></div>
@@ -282,16 +416,13 @@ fbq('track', 'PageView');
       </div>
       <div class="hero-meta-item">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px"><defs><linearGradient id="gi3" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><path d="M3 21h18M5 21V7l7-4 7 4v14" stroke="url(#gi3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-4h6v4M9 11h1m4 0h1M9 15h1m4 0h1" stroke="url(#gi3)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-        <div>À DEFINIR<br>À DEFINIR</div>
+        <div>Auditório Betel<br>Av. Porto Alegre, 4000, Sorriso-MT, 78890-000</div>
       </div>
     </div>
-    <div class="btn-vip-wrapper">
-      <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">Entrar no grupo VIP</a>
-      <div class="vip-benefit fade-up">
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px"><defs><linearGradient id="gg1" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg1)" stroke-width="1.8"/><path d="M5 20h34v5H5z" stroke="url(#gg1)" stroke-width="1.8" stroke-linejoin="round"/><path d="M22 20V38" stroke="url(#gg1)" stroke-width="1.8" stroke-linecap="round"/><path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
-      </div>
-    </div>
+      <!-- Botão: no fluxo em tablet/mobile, via JS posicionado à direita no desktop -->
+      <a href="#ingresso" class="btn-primary hero-btn-desktop" id="hero-btn">
+        Inscrever-me agora
+      </a>
   </div>
 </section>
 
@@ -302,13 +433,7 @@ fbq('track', 'PageView');
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/awAhT4j2ECo?autoplay=1&mute=1" title="Imersão Método EVO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
-  <div class="btn-vip-wrapper">
-    <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">Entrar no grupo VIP</a>
-    <div class="vip-benefit fade-up">
-      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px"><defs><linearGradient id="gg2" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg2)" stroke-width="1.8"/><path d="M5 20h34v5H5z" stroke="url(#gg2)" stroke-width="1.8" stroke-linejoin="round"/><path d="M22 20V38" stroke="url(#gg2)" stroke-width="1.8" stroke-linecap="round"/><path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
-    </div>
-  </div>
+  <a href="#ingresso" class="btn-primary">Inscrever-me agora</a>
 </section>
 
 <!-- BENEFÍCIOS -->
@@ -369,13 +494,7 @@ fbq('track', 'PageView');
     </div>
   </div>
   <div style="text-align:center;margin-top:52px;">
-    <div class="btn-vip-wrapper">
-      <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">Entrar no grupo VIP</a>
-      <div class="vip-benefit fade-up">
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px"><defs><linearGradient id="gg3" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg3)" stroke-width="1.8"/><path d="M5 20h34v5H5z" stroke="url(#gg3)" stroke-width="1.8" stroke-linejoin="round"/><path d="M22 20V38" stroke="url(#gg3)" stroke-width="1.8" stroke-linecap="round"/><path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
-      </div>
-    </div>
+    <a href="#ingresso" class="btn-primary">Inscrever-me agora</a>
   </div>
 </section>
 
@@ -384,13 +503,7 @@ fbq('track', 'PageView');
   <blockquote class="fade-in">
     "Acredite, você pode alcançar sua <span class="evo-gradient">melhor versão</span> com os recursos que tem disponível hoje."
   </blockquote>
-  <div class="btn-vip-wrapper">
-    <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">Entrar no grupo VIP</a>
-    <div class="vip-benefit fade-up">
-      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px"><defs><linearGradient id="gg4" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg4)" stroke-width="1.8"/><path d="M5 20h34v5H5z" stroke="url(#gg4)" stroke-width="1.8" stroke-linejoin="round"/><path d="M22 20V38" stroke="url(#gg4)" stroke-width="1.8" stroke-linecap="round"/><path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
-    </div>
-  </div>
+  <a href="#ingresso" class="btn-primary">Inscrever-me agora</a>
 </section>
 
 <!-- CRONOGRAMA -->
@@ -441,13 +554,107 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- INGRESSO REMOVIDO TEMPORARIAMENTE -->
+<!-- INGRESSO -->
+<section class="section-ticket" id="ingresso">
+  <h2>Escolha seu <span class="evo-gradient">acesso:</span></h2>
+  <p class="sub">Vagas limitadas — garanta já a sua participação</p>
+
+  <div class="tickets-grid">
+
+    <!-- INDIVIDUAL -->
+    <div class="ticket-wrap ticket-wrap--destaque fade-up">
+    <div class="ticket-card">
+      <div class="ticket-header"><h3>Acesso Individual</h3></div>
+      <div class="ticket-body">
+        <p class="ticket-desc">Este acesso garante sua participação no evento.</p>
+        <p class="ticket-price-old">de R$ 2.497 por apenas</p>
+        <div class="ticket-price"><span>R$</span>390</div>
+        <p class="ticket-installments">ou 12x de R$ 40,24 no cartão</p>
+        <ul class="ticket-features">
+          <li>Participação nos 3 dias do Imersão Método EVO</li>
+          <li>Acesso a todas as ferramentas</li>
+          <li>Material de apoio</li>
+        </ul>
+        <a href="https://pay2.metodoevo.com.br/?uid=480f29bd-7c72-4c5a-b17b-eff592a57f2c" target="_blank" rel="noopener" class="btn-ticket" onclick="fbq('track','Lead');setTimeout(function(){},500)">INSCREVER-ME AGORA</a>
+        <p style="font-size:12px;font-weight:300;color:var(--grey);text-align:center;">🔒 Compra 100% segura</p>
+      </div>
+      <div class="ticket-footer">
+        <span class="label">Total</span>
+        <span class="total">R$ 390</span>
+      </div>
+      <p class="ticket-vagas">⚡ Vagas limitadas</p>
+    </div>
+    </div>
+
+    <!-- DUPLO -->
+    <div class="ticket-wrap ticket-wrap--destaque fade-up">
+    <div class="ticket-card">
+      <div class="ticket-header"><h3>Acesso Duplo</h3></div>
+      <div class="ticket-body">
+        <p class="ticket-desc">Você + 1 convidado.</p>
+        <p class="ticket-price-old">de R$ 2.497 + 1 ingresso bônus por apenas</p>
+        <div class="ticket-price"><span>R$</span>640</div>
+        <p class="ticket-installments">ou 12x de R$ 66,03 no cartão</p>
+        <ul class="ticket-features">
+          <li>2 participações nos 3 dias do Imersão Método EVO</li>
+          <li>Acesso a todas as ferramentas</li>
+          <li>Material de apoio para os dois</li>
+        </ul>
+        <a href="https://pay2.metodoevo.com.br/?uid=274bc330-a17b-43b7-85eb-0d1f47824c13" target="_blank" rel="noopener" class="btn-ticket" onclick="fbq('track','Lead');setTimeout(function(){},500)">INSCREVER-ME AGORA</a>
+        <p style="font-size:12px;font-weight:300;color:var(--grey);text-align:center;">🔒 Compra 100% segura</p>
+        <p style="font-size:11px;font-weight:300;color:var(--grey);text-align:center;margin-top:8px;">Após a inscrição você receberá um link para cadastrar seu convidado.</p>
+      </div>
+      <div class="ticket-footer">
+        <span class="label">Total</span>
+        <span class="total">R$ 640</span>
+      </div>
+      <p class="ticket-vagas">⚡ Vagas limitadas</p>
+    </div>
+    </div>
+
+    <!-- TRIPLO -->
+    <div class="ticket-wrap ticket-wrap--destaque fade-up">
+      <div class="ticket-badge"><span>Recomendado</span></div>
+    <div class="ticket-card">
+      <div class="ticket-header"><h3>Acesso Triplo</h3></div>
+      <div class="ticket-body">
+        <p class="ticket-desc">Você + 2 convidados.</p>
+        <p class="ticket-price-old">de R$ 2.497 + 2 ingressos bônus por apenas</p>
+        <div class="ticket-price"><span>R$</span>780</div>
+        <p class="ticket-installments">ou 12x de R$ 80,48 no cartão</p>
+        <ul class="ticket-features">
+          <li>3 participações nos 3 dias do Imersão Método EVO</li>
+          <li>Acesso a todas as ferramentas</li>
+          <li>Material de apoio para os três</li>
+        </ul>
+        <a href="https://pay2.metodoevo.com.br/?uid=91a1bd5c-3329-4a70-877e-04701f475781" target="_blank" rel="noopener" class="btn-ticket" onclick="fbq('track','Lead');setTimeout(function(){},500)">INSCREVER-ME AGORA</a>
+        <p style="font-size:12px;font-weight:300;color:var(--grey);text-align:center;">🔒 Compra 100% segura</p>
+        <p style="font-size:11px;font-weight:300;color:var(--grey);text-align:center;margin-top:8px;">Após a inscrição você receberá links para cadastrar seus dois convidados.</p>
+      </div>
+      <div class="ticket-footer">
+        <span class="label">Total</span>
+        <span class="total">R$ 780</span>
+      </div>
+      <p class="ticket-vagas">⚡ Vagas limitadas</p>
+    </div>
+    </div>
+
+  </div>
+  <p class="ticket-notice">* Treinamento para maiores de 16 anos.</p>
+</section>
 
 <!-- SPEAKER -->
 <section class="section-speaker">
   <div class="speaker-inner">
     <div class="speaker-photo-wrap fade-left">
-      <img src="https://ime.marciomicheli.com.br/wp-content/uploads/2024/06/marcio-micheli-sobre.webp" alt="Marcio Micheli">
+      <div class="speaker-carousel" id="speakerCarousel">
+        <img src="https://github.com/crisgonbarros/ime-jatai/blob/main/img/marcio_1.jpeg?raw=true" alt="Marcio Micheli" class="active">
+        <img src="https://github.com/crisgonbarros/ime-jatai/blob/main/img/marcio_2.jpeg?raw=true" alt="Marcio Micheli">
+        <div class="carousel-dots">
+          <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+          <div class="carousel-dot" onclick="goToSlide(1)"></div>
+        </div>
+      </div>
     </div>
     <div class="speaker-content fade-right">
       <h2>Prazer, eu sou Marcio Micheli</h2>
@@ -456,13 +663,7 @@ fbq('track', 'PageView');
       <p>Minha família é o <strong>meu bem mais precioso</strong> e juntos temos criado memórias extraordinárias. Sou ex-servidor público e, embora tenha exercido essa função com dedicação, descobri verdadeiramente o meu propósito de vida por meio do Coaching e quero compartilhar com você todas as <strong>infinitas possibilidades</strong> de realizações que temos nessa vida de sermos felizes com aquilo que somos.</p>
       <p>Venha comigo! Eu quero apresentar para você como <strong>alcançar seus objetivos</strong> mais ousados.</p>
       <br>
-      <div class="btn-vip-wrapper">
-        <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">Entrar no grupo VIP</a>
-        <div class="vip-benefit fade-up">
-          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px"><defs><linearGradient id="gg6" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg6)" stroke-width="1.8"/><path d="M5 20h34v5H5z" stroke="url(#gg6)" stroke-width="1.8" stroke-linejoin="round"/><path d="M22 20V38" stroke="url(#gg6)" stroke-width="1.8" stroke-linecap="round"/><path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
-        </div>
-      </div>
+      <a href="#ingresso" class="btn-primary">Inscrever-me agora</a>
     </div>
   </div>
 </section>
