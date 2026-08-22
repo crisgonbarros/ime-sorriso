@@ -2,7 +2,7 @@
 ================================================================================
   IME – IMERSÃO MÉTODO EVO | Sorriso-MT
   Baseado no modelo v1.0
-  IME Sorriso-MT | Versão 2.5 | Fase: Vendas/Carrinho
+  IME Sorriso-MT | Versão 2.6 | Fase: Vendas/Carrinho
 ================================================================================
 -->
 <!DOCTYPE html>
@@ -93,17 +93,38 @@
   .section-video .sub { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-bottom: 48px; }
   .video-wrap { max-width: 800px; margin: 0 auto 36px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,212,255,0.2); aspect-ratio: 16/9; background: #000; position: relative; }
   .video-wrap iframe { width: 100%; height: 100%; border: none; display: block; pointer-events: none; }
-  /* Esconde controles nativos do YouTube via camada transparente */
-  .video-wrap::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 60px; z-index: 5; }
-  /* Botões customizados passam por cima */
-  #yt-overlay { z-index: 10; }
-  #btn-playpause, #btn-mute { pointer-events: all; }
-  /* Mobile: botões menores e sem quebra de linha */
+  /* Camada bloqueadora dos controles nativos do YouTube */
+  .video-wrap::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 5; }
+  /* Botão de mute no canto superior direito */
+  #btn-mute-yt {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    background: rgba(0,0,0,0.55);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: all;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s, transform 0.15s;
+  }
+  #btn-mute-yt:hover { background: rgba(255,107,0,0.45); transform: scale(1.1); }
+  #btn-mute-yt svg { width: 20px; height: 20px; display: block; }
+  /* Tablet */
+  @media (max-width: 900px) {
+    #btn-mute-yt { width: 36px; height: 36px; top: 10px; right: 10px; }
+    #btn-mute-yt svg { width: 18px; height: 18px; }
+  }
+  /* Mobile */
   @media (max-width: 600px) {
-    #yt-overlay { gap: 6px; bottom: 8px; }
-    #btn-playpause, #btn-mute { padding: 8px 12px; gap: 5px; }
-    #btn-playpause span, #btn-mute span { font-size: 10px; }
-    #btn-playpause svg, #btn-mute svg { width: 16px; height: 16px; }
+    #btn-mute-yt { width: 32px; height: 32px; top: 8px; right: 8px; }
+    #btn-mute-yt svg { width: 15px; height: 15px; }
   }
 
   /* BENEFÍCIOS */
@@ -452,19 +473,23 @@ fbq('track', 'PageView');
   <h2><span class="evo-gradient">Mudar a sua vida para melhor</span> e para sempre!</h2>
   <div class="video-wrap">
     <iframe id="yt-player" src="https://www.youtube.com/embed/awAhT4j2ECo?autoplay=1&mute=1&controls=0&enablejsapi=1&rel=0&playsinline=1" title="Imersão Método EVO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-    <!-- Overlay de controles customizados -->
-    <div id="yt-overlay" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10;">
-      <button id="btn-playpause" onclick="togglePlay()" style="background:rgba(0,0,0,0.65);border:none;border-radius:50px;padding:10px 18px;cursor:pointer;display:flex;align-items:center;gap:8px;backdrop-filter:blur(6px);transition:background 0.2s;">
-        <svg id="icon-play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;display:block"><defs><linearGradient id="gplay" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><polygon points="5,3 19,12 5,21" fill="url(#gplay)"/></svg>
-        <svg id="icon-pause" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;display:none"><defs><linearGradient id="gpause" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><rect x="5" y="3" width="4" height="18" fill="url(#gpause)"/><rect x="15" y="3" width="4" height="18" fill="url(#gpause)"/></svg>
-        <span style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:#fff;letter-spacing:0.05em;" id="label-playpause">PLAY</span>
-      </button>
-      <button id="btn-mute" onclick="toggleMute()" style="background:rgba(0,0,0,0.65);border:none;border-radius:50px;padding:10px 18px;cursor:pointer;display:flex;align-items:center;gap:8px;backdrop-filter:blur(6px);transition:background 0.2s;">
-        <svg id="icon-muted" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;display:block"><defs><linearGradient id="gmuted" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><path d="M11 5L6 9H2v6h4l5 4V5z" fill="url(#gmuted)"/><line x1="23" y1="9" x2="17" y2="15" stroke="url(#gmuted)" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="url(#gmuted)" stroke-width="2" stroke-linecap="round"/></svg>
-        <svg id="icon-sound" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;display:none"><defs><linearGradient id="gsound" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><path d="M11 5L6 9H2v6h4l5 4V5z" fill="url(#gsound)"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="url(#gsound)" stroke-width="2" stroke-linecap="round"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="url(#gsound)" stroke-width="2" stroke-linecap="round"/></svg>
-        <span style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:#fff;letter-spacing:0.05em;" id="label-mute">SEM SOM</span>
-      </button>
-    </div>
+    <!-- Botão de mute/unmute customizado no canto superior direito -->
+    <button id="btn-mute-yt" onclick="toggleMute()" title="Ativar/desativar som">
+      <!-- Ícone mudo (estado inicial) -->
+      <svg id="icon-muted" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="gmuted" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+        <path d="M11 5L6 9H2v6h4l5 4V5z" fill="url(#gmuted)"/>
+        <line x1="23" y1="9" x2="17" y2="15" stroke="url(#gmuted)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="17" y1="9" x2="23" y2="15" stroke="url(#gmuted)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <!-- Ícone com som (estado após unmute) -->
+      <svg id="icon-sound" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <defs><linearGradient id="gsound" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+        <path d="M11 5L6 9H2v6h4l5 4V5z" fill="url(#gsound)"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="url(#gsound)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="url(#gsound)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
   <a href="#ingresso" class="btn-primary">Inscrever-me agora</a>
 </section>
@@ -890,49 +915,18 @@ fbq('track', 'PageView');
 </script>
 
 
-<!-- YouTube IFrame API + Controles Customizados -->
+<!-- YouTube IFrame API + Controle de Mute Customizado -->
 <script>
   var ytPlayer;
-  var isPlaying = true; // começa tocando (autoplay)
-  var isMuted = true;   // começa mudo
+  var isMuted = true; // começa mudo (autoplay)
 
-  // Carrega a API do YouTube
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  // Callback da API quando estiver pronta
   function onYouTubeIframeAPIReady() {
-    ytPlayer = new YT.Player('yt-player', {
-      events: {
-        'onStateChange': onPlayerStateChange
-      }
-    });
-  }
-
-  function onPlayerStateChange(event) {
-    // YT.PlayerState.PLAYING = 1, PAUSED = 2, ENDED = 0
-    if (event.data === 1) {
-      isPlaying = true;
-      document.getElementById('icon-play').style.display = 'none';
-      document.getElementById('icon-pause').style.display = 'block';
-      document.getElementById('label-playpause').textContent = 'PAUSE';
-    } else if (event.data === 2 || event.data === 0) {
-      isPlaying = false;
-      document.getElementById('icon-play').style.display = 'block';
-      document.getElementById('icon-pause').style.display = 'none';
-      document.getElementById('label-playpause').textContent = 'PLAY';
-    }
-  }
-
-  function togglePlay() {
-    if (!ytPlayer) return;
-    if (isPlaying) {
-      ytPlayer.pauseVideo();
-    } else {
-      ytPlayer.playVideo();
-    }
+    ytPlayer = new YT.Player('yt-player', {});
   }
 
   function toggleMute() {
@@ -943,29 +937,13 @@ fbq('track', 'PageView');
       isMuted = false;
       document.getElementById('icon-muted').style.display = 'none';
       document.getElementById('icon-sound').style.display = 'block';
-      document.getElementById('label-mute').textContent = 'COM SOM';
     } else {
       ytPlayer.mute();
       isMuted = true;
       document.getElementById('icon-muted').style.display = 'block';
       document.getElementById('icon-sound').style.display = 'none';
-      document.getElementById('label-mute').textContent = 'SEM SOM';
     }
   }
-
-  // Hover nos botões
-  document.addEventListener('DOMContentLoaded', function() {
-    ['btn-playpause', 'btn-mute'].forEach(function(id) {
-      var btn = document.getElementById(id);
-      if (!btn) return;
-      btn.addEventListener('mouseenter', function() {
-        this.style.background = 'rgba(255,107,0,0.3)';
-      });
-      btn.addEventListener('mouseleave', function() {
-        this.style.background = 'rgba(0,0,0,0.65)';
-      });
-    });
-  });
 </script>
 </body>
 </html>
