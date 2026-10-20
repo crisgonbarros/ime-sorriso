@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imersão Método EVO – Sorriso-MT | 06 a 08 de Novembro de 2026</title>
-<!-- IME Sorriso-MT | Versão 4.0 | Fase: Vendas/Carrinho -->
+<!-- IME Sorriso-MT | Versão 4.1 | Fase: Vendas/Carrinho -->
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAIAEBAAAAAAIACVAQAAJgAAACAgAAAAACAAmQMAALsBAACJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAFcSURBVHicpZPBahNRGIW/O06SaUoL0iAIpX0Dd+YJSvsAfQZfw12foBtBKPgAJm7SZVdduhuyiI0prVoxQYyONpPkzn9cNFJmxgiSs7uX/xzO+e+5TpJYAcEq5KUCAqzoa4lRV4wgwK3iwAGjVJx9zJhmWkiC0glYtlxAgCHG3jju/+L8JuN1LDIvLBNJp8XswxWYB1lZwAEBjt5kyryS8rxZ5XHFMbaA4IFj3DllNngPQQju3nj4J3PClHf6Rlz9Sa1epd2bsPkl4iL2DLtvUX9E9OaIMI2pNQ9xW7sgERbzVyqeaMMTzGE9HVP9bogpLkhAHszyL6ICevqqV/OuJMnfXGrYfilJGuzvKOmcFMdVWmKDiCfhQywT7tE2XMd8fnZA1Kiz9nQPsvwSSw5Mppm8ZIvz7Q8lrRfyn/qLC8vNl4r0T0jg8jULl4zmSbI7ois3//8c/AUr/8bf19YE2tbj0V4AAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAANgSURBVHic7Zc9bBxVEMd/83bv9uK7w4Y4UkxkY6HwoYCUgIwUIYUiQBEJCUFBk4aCAiklLTQpIqCmoUBIUEAHQqkjUBSsBCxjGROBsY2NPxKTM+fYd7d3uztDsecYJz7fERem8EjbvH2785t5/5nZFTMz9tDcXjrfB9gH+F8A+P9ls/6rYAUQabHRbIebW0120wesCbIb6ygDG4Tf3Yj5uWR0O+HMoEfvAdkWon59nODJpzvKQlsNbDj4fLbGJ1Mh15ZjLk4lXLiccLu+FRDA6iHlzz5Ga9UOQmsDoJY6n1hv8H05pCcw3nwiwwensjRqwsUJQ0iPHFUAosV5qlevEC/MNV+i9w+ApNGNVmu4TMTDeTjd5zPYLbw95BibhETBCZgapkY4Pkb0V4lw/CdQxew+AAxDMVzKwIrUCIKIYpCkUAbH+oSHElhYBksATxAnrP84jmVy1MaGwTnEeaAxaNI5gCA4UoHN6DqVbIXufMytuM5kOUINnIPjh4VKFcQDU+H2yCzlqzO4Bw/SmLhMY2I4FaLzwXnbJ/nuMmyQMM0KM1ZmkZC/EyWJMmiYpV7O0bh5gHypiwHN4uaMYkUpzIaEP0zStf4tPT2j5LunyGUXyQSr5Pr7CB4fInP8DN6JV5BccfN8aVGGcicLhnMKfoLLxGgQoYGPc4qYUUgquFIEGuFcCSeriFQRqSHSQKwBcR2L66BRKqi76rZtI/qTdb5OZqhHgl/L8VrQT3+QxXnC8pVpbl1f5thbJ7E4ZvXaryy89w45b5qgWOXQu58SnHgRpLXWdxShAf0UGHBdhH6NRwsZHukKEGeoQu6gUhv+Ek1APEfP809ReKwHW1vCOzRA8MzLqfNkQ4T3xtpGhCnEgBTARQz6XXey6BwUjw6QW71EZeQSiMMMXDiP0wqZ/qNgmjr3NkR4b2fcsQ9I8zpCgQfE44jkm0PIYUmM+Fl6XzjF8vmz1H8bYe2rj9D5UXzfyJ9+o5n6Nu3YOrC6xfaN/WKRJZuLmpipWryyZHOv99r0s9gfJ7HZIaz0/lkzVbMkaf3SpnU8DW+wxmGKWxdNQRzx0u+sffEhWrpJ7rmXyL96bjPyNgNpV+M4heh89m9nHX+QtJz9ImkmNiaXGXjbC27bx/d/TPYB9gH2GuAfupDbVCV3uH0AAAAASUVORK5CYII=">
@@ -29,9 +29,7 @@
 <!-- Fontes hospedadas no próprio site (latin) + pré-carregamento das mais usadas no topo -->
 <link rel="preload" href="fonts/montserrat-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/open-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Foto do topo: baixa primeiro (versão do celular até 600px, do computador acima disso) -->
-<link rel="preload" as="image" href="img/hero-marcio-mobile.webp" type="image/webp" media="(max-width: 600px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-marcio.webp" type="image/webp" media="(min-width: 601px)" fetchpriority="high">
+<!-- hero-marcio.webp carregado diretamente via <img fetchpriority="high"> no HTML — não precisa de preload separado -->
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { overflow-x: hidden; max-width: 100vw; }
@@ -97,6 +95,7 @@
   .nav-logo img {
     height: 36px;
     width: auto;
+    aspect-ratio: 333 / 189;
   }
   .nav-cta {
     background: var(--cyan);
@@ -122,11 +121,21 @@
     align-items: flex-start;
     overflow: hidden;
     contain: layout style;
-    background:
-      linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%),
-      url('img/hero-marcio.webp') center/cover no-repeat;
+    background: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%);
   }
-  .hero-bg { display: none; }
+  /* Imagem de fundo do hero via <img> para garantir LCP rápido */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
   .hero-photo { display: none; }
   .hero-photo {
     position: absolute;
@@ -820,7 +829,8 @@
     .nav { padding: 12px 16px; }
     .nav-logo img { height: 28px; }
     .nav-cta { font-size: 11px; padding: 6px 10px; }
-    .hero { min-height: auto; padding-top: 56px; padding-bottom: 48px; background-image: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%), url('img/hero-marcio-mobile.webp'); }
+    .hero { min-height: auto; padding-top: 56px; padding-bottom: 48px; }
+    .hero-bg img { content: url('img/hero-marcio-mobile.webp'); object-position: top center; }
     .hero-content { padding: 32px 20px 32px; }
     .hero h1 { font-size: 28px; line-height: 1.2; }
     .hero-sub { font-size: 14px; }
@@ -1458,7 +1468,7 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">
-    <img src="img/logo-ime.webp" alt="IME Logo" width="333" height="189">
+    <img src="img/logo-ime.webp" alt="IME Logo" width="333" height="189" loading="eager" fetchpriority="high">
   </div>
   <div class="nav-ticker">
     <div class="nav-ticker-inner">
@@ -1481,7 +1491,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <img src="img/hero-marcio.webp" alt="" width="1440" height="900" fetchpriority="high" decoding="sync" aria-hidden="true">
+  </div>
   <div class="hero-photo"></div>
   <div class="hero-content fade-left visible">
     <span class="hero-eyebrow">Imersão Método EVO · SORRISO-MT</span>
